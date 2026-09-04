@@ -53,4 +53,4 @@ The script installs a carefully selected set of packages and configurations to c
 1. **Download the script** (or clone this repository):
 
    ```bash
-   wget https://raw.githubusercontent.com/yourusername/yourrepo/main/inst-min-lxqt-rpi5.sh
+   wget https://raw.githubusercontent.com/Krys-Py-314/vigilant-succotash-lxqt-deepseek/main/inst-min-lxqt-rpi5.sh
