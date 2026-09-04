@@ -1,8 +1,8 @@
 # Minimal LXQt Environment for Raspberry Pi 5
 
-This repository contains a shell script that transforms a headless Raspberry Pi OS Lite 64-bit installation into a lightweight desktop environment with LXQt and Openbox, focusing on **minimal memory usage** while providing essential GUI and development tools.
+This repository contains a shell script that transforms a headless Raspberry Pi OS Lite 64-bit installation (based on **Debian Trixie**) into a lightweight desktop environment with LXQt and Openbox, focusing on **minimal memory usage** while providing essential GUI and development tools.
 
-![Raspberry Pi 5](https://img.shields.io/badge/Raspberry%20Pi-5-red) ![OS](https://img.shields.io/badge/OS-Raspberry%20Pi%20OS%20Lite%2064--bit-green) ![License](https://img.shields.io/badge/License-MIT-blue)
+![Raspberry Pi 5](https://img.shields.io/badge/Raspberry%20Pi-5-red) ![OS](https://img.shields.io/badge/OS-Raspberry%20Pi%20OS%20Lite%2064--bit-green) ![Debian](https://img.shields.io/badge/Debian-Trixie-purple) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## Overview
 
@@ -14,13 +14,13 @@ The script installs a carefully selected set of packages and configurations to c
 - **Desktop Environment**: Minimal LXQt components (panel, session, runner, notification daemon, power management, etc.).
 - **Lightweight Applications**:
   - Terminal: `sakura`
-  - Text editor: `leafpad`
+  - Text editor: `l3afpad` (lightweight fork of Leafpad; the original is not in the Trixie repos)
   - Web browser: `links2` (graphical mode, text‑oriented)
   - File manager: `pcmanfm-qt`
   - Image viewer: `feh`
   - PDF viewer: `mupdf`
   - Video player: `mpv`
-  - Screen recorder: `gtk-recordmydesktop` + `recordmydesktop`
+  - Screen recorder: `recordmydesktop` (command‑line only; no GUI frontend to save memory)
 - **Development Tools**:
   - GCC, G++, Make, pkg-config
   - GPIO libraries for C: `libgpiod-dev`, `pigpio`
@@ -44,7 +44,7 @@ The script installs a carefully selected set of packages and configurations to c
 ## Prerequisites
 
 - Raspberry Pi 5 board.
-- Raspberry Pi OS Lite (64‑bit) installed and updated.
+- Raspberry Pi OS Lite (64‑bit) based on **Debian Trixie** (latest as of 2025).
 - A normal user account with `sudo` privileges.
 - Stable internet connection.
 
@@ -53,4 +53,4 @@ The script installs a carefully selected set of packages and configurations to c
 1. **Download the script** (or clone this repository):
 
    ```bash
-   wget https://raw.githubusercontent.com/Krys-Py-314/vigilant-succotash-lxqt-deepseek/main/inst-min-lxqt-rpi5.sh
+   wget https://raw.githubusercontent.com/yourusername/yourrepo/main/install-minimal-lxqt-rpi5.sh
