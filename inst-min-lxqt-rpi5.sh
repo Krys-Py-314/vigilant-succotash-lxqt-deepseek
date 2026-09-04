@@ -24,7 +24,7 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-print_status "Starting Raspberry Pi 5 Minimal LXQt/Openbox Setup..."
+print_status "Starting Raspberry Pi 5 Minimal LXQt/Openbox Setup (Debian Trixie)..."
 
 # Update package lists
 print_status "Updating package lists..."
