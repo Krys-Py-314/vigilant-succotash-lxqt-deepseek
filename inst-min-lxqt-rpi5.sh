@@ -61,12 +61,11 @@ sudo apt install -y --no-install-recommends \
 print_status "Installing lightweight tools (terminal, editor, browser, file manager, etc.)..."
 sudo apt install -y --no-install-recommends \
     sakura \
-    leafpad \
+    l3afpad \
     links2 \
     feh \
     mpv \
     mupdf \
-    gtk-recordmydesktop \
     recordmydesktop \
     alsa-utils \
     || { print_error "Failed to install lightweight tools"; exit 1; }
@@ -190,7 +189,7 @@ print_status "Setting default applications..."
 mkdir -p ~/.config
 cat > ~/.config/mimeapps.list <<'EOF'
 [Default Applications]
-text/plain=leafpad.desktop
+text/plain=l3afpad.desktop
 x-scheme-handler/http=links2.desktop
 x-scheme-handler/https=links2.desktop
 inode/directory=pcmanfm-qt.desktop

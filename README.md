@@ -14,13 +14,13 @@ The script installs a carefully selected set of packages and configurations to c
 - **Desktop Environment**: Minimal LXQt components (panel, session, runner, notification daemon, power management, etc.).
 - **Lightweight Applications**:
   - Terminal: `sakura`
-  - Text editor: `leafpad`
+  - Text editor: `l3afpad` (lightweight fork of Leafpad, the original is not available in Raspberry Pi OS)
   - Web browser: `links2` (graphical mode, text‑oriented)
   - File manager: `pcmanfm-qt`
   - Image viewer: `feh`
   - PDF viewer: `mupdf`
   - Video player: `mpv`
-  - Screen recorder: `gtk-recordmydesktop` + `recordmydesktop`
+  - Screen recorder: `recordmydesktop` (command‑line; no GUI frontend included to save memory)
 - **Development Tools**:
   - GCC, G++, Make, pkg-config
   - GPIO libraries for C: `libgpiod-dev`, `pigpio`
@@ -53,4 +53,4 @@ The script installs a carefully selected set of packages and configurations to c
 1. **Download the script** (or clone this repository):
 
    ```bash
-   wget https://raw.githubusercontent.com/yourusername/yourrepo/main/inst-min-lxqt-rpi5.sh
+   wget https://raw.githubusercontent.com/yourusername/yourrepo/main/install-minimal-lxqt-rpi5.sh
