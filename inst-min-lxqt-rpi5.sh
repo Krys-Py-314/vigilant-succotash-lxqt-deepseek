@@ -75,8 +75,7 @@ print_status "Installing development tools..."
 sudo apt install -y --no-install-recommends \
     build-essential \
     libgpiod-dev \
-    pigpio \
-    libpigpio-dev \
+    gpiod \
     pkg-config \
     git \
     curl \

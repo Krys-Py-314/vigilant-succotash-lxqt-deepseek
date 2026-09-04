@@ -23,7 +23,8 @@ The script installs a carefully selected set of packages and configurations to c
   - Screen recorder: `recordmydesktop` (command‑line only; no GUI frontend to save memory)
 - **Development Tools**:
   - GCC, G++, Make, pkg-config
-  - GPIO libraries for C: `libgpiod-dev`, `pigpio`
+  - GPIO library for C: `libgpiod-dev` (modern replacement for older libraries)
+  - GPIO command‑line tool: `gpiod`
   - Git, Curl, Wget
 - **System Utilities**:
   - `dropbear` SSH server (replaces `openssh-server` for lower memory)
