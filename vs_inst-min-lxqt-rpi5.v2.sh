@@ -61,14 +61,16 @@ sudo apt install -y --no-install-recommends \
     lxqt-config \
     lxqt-qtplugin \
     lxqt-archiver \
-    qterminal \
-    pcmanfm-qt \
+    
     || { print_error "Failed to install LXQt components"; exit 1; }
 
 # Install lightweight tools
 print_status "Installing lightweight tools (terminal, editor, browser, file manager, etc.)..."
 sudo apt install -y --no-install-recommends \
-    l3afpad \
+    featherpad \
+    qterminal \
+    pcmanfm-qt \
+    vimb \
     || { print_error "Failed to install lightweight tools"; exit 1; }
 
 # REMOVED FROM AFTER LEAFPAD    
