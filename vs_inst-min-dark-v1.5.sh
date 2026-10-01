@@ -29,18 +29,19 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# ---------------------------------------------------------------------------
 print_status() {
     echo -e "${GREEN}[INFO]${NC} $1"
 }
-
+# ---------------------------------------------------------------------------
 print_warning() {
     echo -e "${YELLOW}[WARN]${NC} $1"
 }
-
+# ---------------------------------------------------------------------------
 print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
-
+# ---------------------------------------------------------------------------
 # Check if running as root
 if [ "$EUID" -eq 0 ]; then
     print_error "Please do not run this script as root. Run as normal user with sudo privileges."
@@ -96,23 +97,24 @@ PANEL_KB_FONT_PT=12
 
 OB_THEME="Arc-Dark-Square"
 
+# ---------------------------------------------------------------------------
 banner() {
     print_status " "
     print_status " $1"
     print_status " "
 }
-
+# ---------------------------------------------------------------------------
 note_fail() {
     FAILED_STEPS+=("$1")
     print_error "$1"
 }
-
+# ---------------------------------------------------------------------------
 pkg_available() {
     local cand
     cand="$(apt-cache policy -- "$1" 2>/dev/null | awk -F': ' '/Candidate:/{print $2; exit}')"
     [ -n "$cand" ] && [ "$cand" != "(none)" ]
 }
-
+# ---------------------------------------------------------------------------
 apt_install() {
     local want=("$@") ok=() miss=() p
     for p in "${want[@]}"; do
@@ -130,7 +132,7 @@ apt_install() {
     fi
     return 0
 }
-
+# ---------------------------------------------------------------------------
 confirm() {
     local prompt="$1"
     [ "$ASSUME_YES" = "1" ] && return 0
@@ -142,7 +144,7 @@ confirm() {
         *)     return 0 ;;
     esac
 }
-
+# ---------------------------------------------------------------------------
 # Set key=value inside [section] of an ini file, creating either as needed.
 ini_set() {
     local file="$1" section="$2" key="$3" value="$4"
