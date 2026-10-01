@@ -61,7 +61,6 @@ sudo apt install -y --no-install-recommends \
     lxqt-config \
     lxqt-qtplugin \
     lxqt-archiver \
-    
     || { print_error "Failed to install LXQt components"; exit 1; }
 
 # Install lightweight tools
