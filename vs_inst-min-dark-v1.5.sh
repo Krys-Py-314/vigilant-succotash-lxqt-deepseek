@@ -248,13 +248,16 @@ else
     note_fail "Arc-Dark not found after install - GTK theming will not apply."
 fi
 
-if [ -d /usr/share/icons/Papirus-Dark ]; then
-    print_status "Papirus-Dark icon theme present."
-    ICON_THEME="Papirus-Dark"
-else
-    print_warning "Papirus-Dark missing; falling back to Numix-Circle."
-    ICON_THEME="Numix-Circle"
-fi
+#if [ -d /usr/share/icons/Papirus-Dark ]; then
+#    print_status "Papirus-Dark icon theme present."
+#    ICON_THEME="Papirus-Dark"
+#else
+#    print_warning "Papirus-Dark missing; falling back to Numix-Circle."
+#    ICON_THEME="Numix-Circle"
+#fi
+
+ICON_THEME="Numix-Circle"
+
 
 # ===========================================================================
 banner "03 - Raspberry icon for the application menu (skipped)"
