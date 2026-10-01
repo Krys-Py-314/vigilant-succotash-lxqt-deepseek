@@ -68,15 +68,17 @@ sudo apt install -y --no-install-recommends \
 # Install lightweight tools
 print_status "Installing lightweight tools (terminal, editor, browser, file manager, etc.)..."
 sudo apt install -y --no-install-recommends \
-    # sakura \         NOT NEEDED smal terminal qterminal is prefered 
     l3afpad \
+    || { print_error "Failed to install lightweight tools"; exit 1; }
+
+# REMOVED FROM AFTER LEAFPAD    
     # links2 \         NOT NEDDED (yet) cli txt mode web browser
     # feh \            NOT NEDDED (yet) cli wallpaper tool
     # mpv \            NOT NEDDED (yet) command-line media player         
     # mupdf \          NOT NEDDED (yet) PDF viewer
     #recordmydesktop \ NOT NEEDED capture audio-video data from desktop
     #alsa-utils \      NOT NEEDED sound utilities 
-    || { print_error "Failed to install lightweight tools"; exit 1; }
+
 
 # Install development tools
 print_status "Installing development tools..."
