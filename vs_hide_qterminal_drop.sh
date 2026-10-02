@@ -191,6 +191,32 @@ if command -v desktop-file-validate >/dev/null 2>&1; then
     fi
 fi
 
+
+CONFIG_FILE="$HOME/.config/lxqt/lxqt-panel.conf"
+
+# 1. Verify the configuration file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: LXQt panel configuration file not found at $CONFIG_FILE"
+    exit 1
+fi
+
+# 2. Use sed to change or append categoriesPosition under the [fancymenuX] section
+# This targets the line directly after the [fancymenu...] header block
+sed -i '/^\[fancymenu/!b; :a; n; /^categoriesPosition=/ { s/=.*/=left/; b }; /^\[/ { i\categoriesPosition=left\n; b }; ba' "$CONFIG_FILE"
+
+# If the parameter didn't exist in the file at all, append it safely to ensure it applies
+if ! grep -q "categoriesPosition=left" "$CONFIG_FILE"; then
+    # Locate the exact fancy menu header and append it immediately below
+    sed -i '/^\[fancymenu/a categoriesPosition=left' "$CONFIG_FILE"
+fi
+
+# 3. Restart the LXQt panel to apply changes immediately
+lxqt-panel --replace &
+disown
+
+echo "Fancy Menu Categories Position set to left successfully."
+
+
 print_status "Wrote ${DEST}"
 print_status "\"QTerminal drop down\" is now hidden from System Tools."
 print_status "If the menu still shows it, log out and back in (or reboot)."
