@@ -6,3 +6,4 @@ sudo /bin/cp -f ./vs_bashrc $HOME/.bashrc
 ./vs_inst-min-conf_featherpad-v1.5.sh
 ./vs_inst-min-conf_pcmanfm-qt-v1.5.sh
 ./vs_inst-min-conf_qterminal-v1.5.sh
+./vs_lxqt_panel_left.sh

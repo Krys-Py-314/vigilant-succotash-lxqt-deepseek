@@ -85,8 +85,8 @@ fi
 
 #~/.config/qterminal.org/qterminal.ini
 section="General"
-fontFamily="Noto Mono"
-fontSize="10"
+fontFamily="Monospace"
+fontSize="8"
 
 dir="$HOME/.config/qterminal.org"
 banner "Configuration of $dir"
