@@ -88,10 +88,10 @@ sudo apt update || { print_error "Failed to update package lists"; exit 1; }
 print_status "Installing X11 and Openbox..."
 sudo apt install -y --no-install-recommends \
     xserver-xorg-core \
-    xinit \
     xserver-xorg-video-modesetting \
     xserver-xorg-input-libinput \
     x11-xserver-utils \
+    xinit \
     openbox \
     obconf \
     || { print_error "Failed to install X11/Openbox"; exit 1; }
@@ -319,9 +319,6 @@ else
     # If no theme name exists, add it
     sed -i '/<theme>/a\    <name>Arc-Dark</name>' ~/.config/openbox/rc.xml
 fi
-
-
-
 
 
 
