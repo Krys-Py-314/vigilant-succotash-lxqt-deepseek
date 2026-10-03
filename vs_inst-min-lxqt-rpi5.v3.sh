@@ -388,7 +388,7 @@ type=workspace
 # Quick Launch (terminal, browser)
 [widget8]
 type=quicklaunch
-config_items[0]=xfce4-terminal
+config_items[0]=qterminal
 config_items[1]=vimb
 config_items[2]=pcmanfm-qt
 EOF
